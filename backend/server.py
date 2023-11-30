@@ -58,10 +58,4 @@ def posts():
 
 
 if __name__ == '__main__':
-    # check if windows system
-    import os
-    if os.name == 'nt':
-        app.run(host='0.0.0.0', port=5000, debug=True)
-    else:
-        from gunicorn.app.wsgiapp import WSGIApplication
-        WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+    app.run(host='0.0.0.0', port=5000, debug=True)

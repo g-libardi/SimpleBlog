@@ -12,6 +12,6 @@ COPY . .
 RUN python ./scripts/create_db.py
 RUN python ./scripts/populate_db.py
 
-CMD [ "python", "./scripts/create_db.py" ]
+EXPOSE 8000
 
-EXPOSE $PORT
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "server:app"]
