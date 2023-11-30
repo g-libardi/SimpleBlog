@@ -1,0 +1,17 @@
+<script setup lang="ts">
+import Feed from './components/Feed.vue';
+import Login from './components/Login.vue';
+// import Router from './components/Router.vue';
+import { logged_in } from './Shared';
+
+</script>
+
+<template>
+  <div class="w-screen min-h-screen bg-slate-600 text-white flex justify-center">
+    <Feed/>
+    <Login v-if="!logged_in"/>
+  </div>
+</template>
+
+<style>
+</style>
