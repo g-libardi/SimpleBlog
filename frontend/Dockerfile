@@ -1,6 +1,8 @@
 # Use an official Node.js image as a parent image
 FROM node:current-alpine as builder
 
+ARG VITE_API_URL
+
 # Set the working directory in the container
 WORKDIR /app
 
