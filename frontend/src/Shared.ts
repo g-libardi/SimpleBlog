@@ -7,7 +7,7 @@ const user = ref('');
 export const all_posts = ref([]);
 
 
-let API_URL = import.meta.env.API_URL;
+let API_URL = import.meta.env.VITE_API_URL;
 if (API_URL === undefined) {
     API_URL = "http://localhost:5000";
 }
