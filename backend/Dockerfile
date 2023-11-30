@@ -1,5 +1,7 @@
 FROM python:3
 
+ARG PORT
+
 WORKDIR /app
 
 COPY requirements.txt ./
@@ -11,3 +13,5 @@ RUN python ./scripts/create_db.py
 RUN python ./scripts/populate_db.py
 
 CMD [ "python", "./scripts/create_db.py" ]
+
+EXPOSE $PORT
