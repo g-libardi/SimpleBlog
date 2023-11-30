@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import Login from './Login.vue';
+import { ref, computed, Component } from 'vue'
+// import Login from './Login.vue';
 import Feed from './Feed.vue';
 import NotFound from './NotFound.vue';
 
-const routes = {
+const routes: { [key: string]: Component } = {
   '/': Feed
 }
 
@@ -16,7 +16,7 @@ window.addEventListener('hashchange', () => {
 })
 
 const currentView = computed(() => {
-  return routes[currentPath.value.slice(1) || '/'] || NotFound
+  return routes[currentPath.value.slice(1) || '/'] || NotFound;
 })
 </script>
 
