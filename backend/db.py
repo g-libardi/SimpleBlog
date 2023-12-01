@@ -11,6 +11,8 @@ class User:
 
     @staticmethod
     def create(name, username, password):
+        if User.exists(username):
+            return None
         cur.execute('INSERT INTO user (name, username, password) VALUES (?, ?, ?)', (name, username, password))
         conn.commit()
         return cur.lastrowid
