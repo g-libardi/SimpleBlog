@@ -5,6 +5,7 @@ import NewPost from './NewPost.vue';
 import { postsData } from '../store';
 
 let followers = ref(true);
+const allPosts = postsData.all;
 
 </script>
 
@@ -26,7 +27,8 @@ let followers = ref(true);
 
         <NewPost/>
         <div class="max-w-[100%] overflow-clip">
-            <div v-for="post in postsData.all">
+            <div v-for="post in allPosts">
+                {{ console.log(post) }}
                 <Post :data="post"/>
             </div>
         </div>
