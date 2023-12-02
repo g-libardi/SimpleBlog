@@ -42,6 +42,8 @@ def new_post():
     username = data['username']
     token = data['token']
     content = data['content']
+    if content is None or content == '':
+        return jsonify({'error': 'Post cannot be empty'}), 400
     
     if auth.auth(username, token):
         post_id = db.Post.create(content, username)
