@@ -8,6 +8,7 @@ Funcionalidades:
 - Habilidade de realizar postagens
 
 A ser implementado:
+- Sistema de mensagens/erros
 - Comentários
 - Likes
 - Seguidores
