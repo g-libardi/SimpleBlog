@@ -12,6 +12,7 @@ export const posts = {
     fetchAll: async () => {
         try {
             let res = await fetch(`${apiData.URL}/posts`);
+
             let data = await res.json();
             if (!res.ok) {
                 notes.error(data.error);
@@ -39,14 +40,14 @@ export const posts = {
             let data = await res.json();
             if (!res.ok) {
                 notes.error(data.error);
-                return;
+                return false;
             }
             console.log(data);
             postsData.all.value.unshift(data);
-            return;
+            return true;
         } catch (error) {
             console.error("Error creating post:", error);
-            return;
+            return false;
         }
     },
 }
