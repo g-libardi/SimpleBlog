@@ -15,7 +15,8 @@ export const notes = {
     notify: (message: string, type: NoteType) => {
         const note: Note = { msg: message, type: type };
         notesData.notes.value.push(note);
-        notes.removeCallback(note, 5000);
+        console.log(notesData.notes.value);
+        notes.removeCallback(note, 3000);
     },
     info: (message: string) => {
         notes.notify(message, NoteType.Info);

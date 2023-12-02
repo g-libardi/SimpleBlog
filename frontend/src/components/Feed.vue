@@ -28,7 +28,6 @@ const allPosts = postsData.all;
         <NewPost/>
         <div class="max-w-[100%] overflow-clip">
             <div v-for="post in allPosts">
-                {{ console.log(post) }}
                 <Post :data="post"/>
             </div>
         </div>

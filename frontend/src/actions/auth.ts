@@ -1,5 +1,6 @@
 
 import { apiData, authData } from "../store";
+import { notes } from "./notes";
 
 export const auth = {
 
@@ -21,12 +22,14 @@ export const auth = {
                 })
             });
     
+            let data = await res.json();
             if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
+                notes.error(data.error);
+                console.log(data.error);
+                return;
             }
 
             authData.logged_in.value = true;
-            let data = await res.json();
             authData.token.value = data.token;
             console.log(data.token);
             authData.current_user.value = username;
@@ -47,11 +50,11 @@ export const auth = {
                     password: password
                 })
             });
-            
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }
             let data = await res.json();
+            if (!res.ok) {
+                notes.error(data.error);
+            }
+            
             console.log(data);
         } catch (error) {
             console.error("An error occurred:", error);

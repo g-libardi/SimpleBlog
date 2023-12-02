@@ -1,4 +1,5 @@
 import { apiData, postsData, authData } from "../store";
+import { notes } from "./notes";
 
 export interface Post {
     id: number;
@@ -10,11 +11,12 @@ export interface Post {
 export const posts = {
     fetchAll: async () => {
         try {
-            let response = await fetch(`${apiData.URL}/posts`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            let res = await fetch(`${apiData.URL}/posts`);
+            let data = await res.json();
+            if (!res.ok) {
+                notes.error(data.error);
+                return;
             }
-            let data = await response.json() as Post[];
             postsData.all.value = data;
         } catch (error) {
             console.error("An error occurred while fetching posts:", error);
@@ -23,7 +25,7 @@ export const posts = {
     
     publish: async (content: string) => {
         try {
-            let response = await fetch(`${apiData.URL}/new_post`, {
+            let res = await fetch(`${apiData.URL}/new_post`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -34,16 +36,17 @@ export const posts = {
                     token: authData.token.value
                 })
             });
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            let data = await res.json();
+            if (!res.ok) {
+                notes.error(data.error);
+                return;
             }
-            let data: Post = await response.json();
             console.log(data);
             postsData.all.value.unshift(data);
-            return true;
+            return;
         } catch (error) {
             console.error("Error creating post:", error);
-            return false;
+            return;
         }
     },
 }
