@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import Post from './Post.vue';
 import NewPost from './NewPost.vue';
-import { all_posts } from '../Shared';
+import { postsData } from '../store';
 
 let followers = ref(true);
 
@@ -26,7 +26,7 @@ let followers = ref(true);
 
         <NewPost/>
         <div class="max-w-[100%] overflow-clip">
-            <div v-for="post in all_posts">
+            <div v-for="post in postsData.all">
                 <Post :data="post"/>
             </div>
         </div>

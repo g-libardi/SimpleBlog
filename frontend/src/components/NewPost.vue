@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { new_post } from '../Shared';
+import { posts } from '../actions/posts';
 
 let content = ref('');
 let textbox = ref(null as HTMLDivElement | null);
 
 async function send_post() {
-    if (await new_post(content.value)) {
+    if (await posts.publish(content.value)) {
         content.value = '';
         if (textbox.value) textbox.value.innerText = '';
     }

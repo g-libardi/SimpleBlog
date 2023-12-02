@@ -2,7 +2,7 @@
 import Feed from './components/Feed.vue';
 import Login from './components/Login.vue';
 // import Router from './components/Router.vue';
-import { logged_in } from './Shared';
+import { logged_in } from './store';
 
 </script>
 

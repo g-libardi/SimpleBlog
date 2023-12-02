@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { login, register } from '../Shared';
+    import { auth } from '../actions/auth';
     import { ref } from 'vue';
 
     const option = ref(0);
@@ -24,7 +24,7 @@
         </button>
       </div>
       
-      <form @submit.prevent="() => login(username, password)" 
+      <form @submit.prevent="() => auth.login(username, password)" 
         v-if="!option"
         class="flex flex-col m-7">
         <label for="username">Username</label>
@@ -40,7 +40,7 @@
         </div>
       </form>
   
-      <form @submit.prevent="() => register(name, username, password)"
+      <form @submit.prevent="() => auth.register(name, username, password)"
         v-else
         class="flex flex-col m-7">
         <label for="name">Name</label>
