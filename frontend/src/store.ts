@@ -14,26 +14,7 @@ export const apiData = {
 }
 
 export const postsData = {
-    all: ref<Post[]>([
-        {
-            id: 1,
-            content: "Hello, world!",
-            username: "john_doe",
-            created_at: "2022-01-01T12:00:00Z",
-        },
-        {
-            id: 2,
-            content: "Testing post example",
-            username: "jane_smith",
-            created_at: "2022-01-02T09:30:00Z",
-        },
-        {
-            id: 3,
-            content: "This is another post",
-            username: "bob_johnson",
-            created_at: "2022-01-03T18:15:00Z",
-        },
-    ]),
+    all: ref<Post[]>([]),
     forYou: ref<Post[]>([]),
     user: ref<Post[]>([]),
 }
