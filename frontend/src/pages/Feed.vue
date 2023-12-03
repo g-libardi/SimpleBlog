@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Post from './Post.vue';
-import NewPost from './NewPost.vue';
+import Post from '../components/Post.vue';
+import NewPost from '../components/NewPost.vue';
 import { postsData } from '../store';
 
 let followers = ref(true);
