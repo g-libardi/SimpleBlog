@@ -6,11 +6,11 @@ Funcionalidades:
 - Login e registro de usuário
 - Senhas criptografadas(SHA256)
 - Habilidade de realizar postagens
+- Sistema de mensagens/erros
 
 A ser implementado:
-- Sistema de mensagens/erros
-- Comentários
-- Likes
+- Perfil do usuário
 - Seguidores
 - Filtro de postagens
-- Perfil do usuário
+- Comentários
+- Likes
