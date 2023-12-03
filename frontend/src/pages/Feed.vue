@@ -10,7 +10,8 @@ const allPosts = postsData.all;
 </script>
 
 <template>
-    <div class="lg:w-1/3 sm:w-1/2 w-full  h-10 flex items-center fixed backdrop-blur-xl">
+    <div class="bg-slate-800">
+        <div class="w-full h-10 flex items-center backdrop-blur-xl sticky top-0">
         <button @click="followers = true"
         class="w-full hover:bg-slate-500 hover:bg-opacity-30 h-10" 
         :class="{'text-slate-400': !followers}">
@@ -21,14 +22,13 @@ const allPosts = postsData.all;
         :class="{'text-slate-400': followers}">
             All
         </button>
-    </div>
-    <div class="lg:w-1/3 sm:w-1/2 bg-slate-800 w-full">
-        <div class="h-10"></div>
-
-        <NewPost/>
-        <div class="max-w-[100%] overflow-clip">
-            <div v-for="post in allPosts">
-                <Post :data="post"/>
+        </div>
+        <div class="w-full">
+            <NewPost class="mt-2"/>
+            <div class="max-w-[100%] overflow-clip">
+                <div v-for="post in allPosts">
+                    <Post :data="post"/>
+                </div>
             </div>
         </div>
     </div>

@@ -35,7 +35,7 @@ async function send_post() {
         <div class="my-4">
             <button class="bg-sky-600 rounded-full px-2 hover:bg-sky-700"
             @click="send_post">
-                Enviar
+                Send
             </button>
         </div>
     </div>
