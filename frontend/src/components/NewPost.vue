@@ -15,7 +15,7 @@ async function send_post() {
 </script>
 
 <template>
-  <div class="w-full bg-slate-800 flex border-b border-b-slate-500">
+  <div class="w-full flex border-b border-b-slate-500">
     <div class="w-[50px] w-min-[50px] flex justify-center">
         <img class="rounded-full w-[35px] h-[35px]" 
         src="https://picsum.photos/50/55" 

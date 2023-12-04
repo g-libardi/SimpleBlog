@@ -11,14 +11,14 @@ const allPosts = postsData.all;
 
 <template>
     <div class="bg-slate-800">
-        <div class="w-full h-10 flex items-center backdrop-blur-xl sticky top-0">
+        <div class="w-full h-10 flex items-center backdrop-blur-md sticky top-0">
         <button @click="followers = true"
-        class="w-full hover:bg-slate-500 hover:bg-opacity-30 h-10" 
+        class="w-full hover:bg-slate-500 hover:bg-opacity-30 h-12" 
         :class="{'text-slate-400': !followers}">
             Following
         </button>
         <button @click="followers = false"
-        class="w-full hover:bg-slate-500 hover:bg-opacity-30 h-10" 
+        class="w-full hover:bg-slate-500 hover:bg-opacity-30 h-12" 
         :class="{'text-slate-400': followers}">
             All
         </button>
